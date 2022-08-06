@@ -13,7 +13,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
+    const HomeScreen(),
     const Text("Search"),
     const Text("T"),
     const Text("Pro"),
@@ -38,7 +38,7 @@ class _BottomBarState extends State<BottomBar> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         // selectedItemColor: Color.fromARGB(255, 56, 81, 122),
-        selectedItemColor: Color.fromARGB(255, 14, 50, 214),
+        selectedItemColor: const Color.fromARGB(255, 14, 50, 214),
         unselectedItemColor: const Color(0xFF526480),
         type: BottomNavigationBarType.fixed,
         items: const [

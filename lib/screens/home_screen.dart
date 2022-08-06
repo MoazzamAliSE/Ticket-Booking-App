@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket_app/screens/ticket_view.dart';
 import 'package:ticket_app/utils/styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -65,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         // decoration: BoxDecoration(
                         //     border: Border(right: BorderSide(width: 2))),
-                        child: Icon(
+                        child: const Icon(
                           FluentIcons.search,
                           color: Color(0xFFBFC205),
                         ),
@@ -76,10 +77,41 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+                const Gap(40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Upcomming Flights",
+                      style: Styles.headLineStyle2,
+                    ),
+                    InkWell(
+                      child: Text(
+                        "View all",
+                        style: Styles.normalTextStyle
+                            .copyWith(color: Styles.primaryColor),
+                      ),
+                      onTap: () {
+                        print("you tapped");
+                      },
+                    ),
+                  ],
+                ),
+                const Gap(15),
+                SingleChildScrollView(
+                  padding: EdgeInsets.only(left: 16),
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      TicketView(),
+                      TicketView(),
+                    ],
+                  ),
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );
